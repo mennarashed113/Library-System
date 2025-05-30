@@ -41,7 +41,7 @@ This Library Management System is a robust, secure, and extensible backend API b
 * *BCryptPasswordEncoder* for secure password storage.
 * *CustomUserDetailsService* to load user credentials from DB.
 * *Role-based Authorization* using .authorizeHttpRequests() to protect endpoints.
-* *PermitAll* on /api/users/register & /api/users/login for onboarding.
+
 
 ### 4. *Borrowing Logic*
 
