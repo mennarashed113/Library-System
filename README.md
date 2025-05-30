@@ -8,7 +8,7 @@ This Library Management System is a robust, secure, and extensible backend API b
 
 ## Technology Stack
 
-* *Java 17*: Modern LTS version, strong typing, stability.
+* *Java 21*: Modern LTS version, strong typing, stability.
 * *Spring Boot 3.x*: Rapid application setup, embedded server, auto-configuration.
 * *Spring Data JPA (Hibernate)*: Simplifies ORM and database interactions.
 * *Spring Security*: HTTP Basic authentication with role-based authorization.
