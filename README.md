@@ -105,8 +105,8 @@ spring.jpa.open-in-view=false
 
 ### Authentication
 
-* POST /api/users/register — Register new user
-* POST /api/users/login — Login (HTTP Basic Auth)
+* POST /api/users/CreateUsers — create new user 
+
 
 ### Books
 
