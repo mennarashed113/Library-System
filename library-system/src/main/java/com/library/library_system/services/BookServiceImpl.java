@@ -32,33 +32,12 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book saveBook(Book bookRequest) {
-        // Find or create Publisher
-//        Publisher publisher = publisherRepository.findById(bookRequest.getPublisher().getId())
-//                .orElseThrow(() -> new RuntimeException("Publisher not found"));
-//
-//
-//
-//        List<Author> authors = authorRepository.findAllById(bookRequest.getAuthors().stream()
-//                .map(Author::getId)
-//                .collect(Collectors.toList()));
-
-//
-//        List<Category> categories = categoryRepository.findAllById(bookRequest.getCategories().stream()
-//                .map(Category::getId)
-//                .collect(Collectors.toList()));
-//        for (Category category : categories) {
-//            if (category.getParent() != null && category.getParent().getId() != null) {
-//                Category parent = categoryRepository.findById(category.getParent().getId())
-//                        .orElseThrow(() -> new RuntimeException("Parent category not found"));
-//                category.setParent(parent);
-//            }
-//        }
 
         Publisher publisher = publisherRepository.findByName(bookRequest.getPublisher().getName())
                 .orElseGet(() -> publisherRepository.save(bookRequest.getPublisher()));
         bookRequest.setPublisher(publisher);
 
-        // ✅ Handle Authors
+        //  Handle Authors
         List<Author> resolvedAuthors = new ArrayList<>();
         for (Author a : bookRequest.getAuthors()) {
             Author existing = authorRepository.findByName(a.getName()).orElseGet(() -> authorRepository.save(a));
@@ -66,7 +45,7 @@ public class BookServiceImpl implements BookService {
         }
         bookRequest.setAuthors(resolvedAuthors);
 
-        // ✅ Handle Categories
+        //  Handle Categories
         List<Category> resolvedCategories = new ArrayList<>();
         for (Category c : bookRequest.getCategories()) {
             Category existing = categoryRepository.findByName(c.getName()).orElseGet(() -> categoryRepository.save(c));
@@ -105,7 +84,6 @@ public class BookServiceImpl implements BookService {
         existingBook.setSummary(updatedBook.getSummary());
         existingBook.setCoverImageUrl(updatedBook.getCoverImageUrl());
 
-        // Optionally update authors, publisher, and categories similarly here
 
         return bookRepository.save(existingBook);
     }

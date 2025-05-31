@@ -1,8 +1,6 @@
 package com.library.library_system.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -39,7 +37,6 @@ public class Book {
     private String coverImageUrl;
 
 
-   // @JsonBackReference(value = "book_authors")
    @ManyToMany
    @JoinTable(
            name = "book_author",
@@ -56,8 +53,6 @@ public class Book {
     private Publisher publisher;
 
 
-
-   // @JsonBackReference(value = "book_categories")
    @ManyToMany
    @JoinTable(
            name = "book_category",

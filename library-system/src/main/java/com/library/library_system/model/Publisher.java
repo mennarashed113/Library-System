@@ -1,7 +1,6 @@
 package com.library.library_system.model;
 
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -19,7 +18,6 @@ public class Publisher {
     private String name;
 
     @OneToMany(mappedBy = "publisher", cascade = CascadeType.ALL)
-   // @JsonManagedReference
     private Set<Book> books = new HashSet<>();
 
     public Publisher() {}

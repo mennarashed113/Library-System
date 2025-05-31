@@ -1,7 +1,5 @@
 package com.library.library_system.model;
 
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 @Entity

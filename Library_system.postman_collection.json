@@ -134,12 +134,49 @@
 			]
 		},
 		{
-			"name": "createUser(ADMIN,LIBRARIAN,STAFF)",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
+			"name": "Users Crud",
+			"item": [
+				{
+					"name": "createUser(ADMIN,LIBRARIAN,STAFF)",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get users by id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
